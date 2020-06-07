@@ -5,7 +5,7 @@ It use Seeed Studio Groove interface to connect modules on the Arduino (Mega).
 
 `Firmware` contains the original Arduino code.
 
-`AndroidApp` contains the re-made Android App to control de hydroponic system. 
+`AndroidApp` contains the re-made Android App to control the hydroponic system. 
 The original Java Application source code is unusable and only the MIT Inventor App is present in this repository. To import to App Inventor, you need to compress as a zip file the content of the folder `AndroidApp` (Not the folder, but what is inside the folder). You should have three folders in the root of the zip archive. Then change to file extension to `aia` (Example: `app.zip` should be `app.aia`). Thus, you should be able to load the app into App Inventor.
 
 A lot of comments was written in French and will not be translated.
