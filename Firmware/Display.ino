@@ -1,7 +1,5 @@
-MIT License
-
-
-Copyright 2017 iBibb Team, Seeed Technology Inc and Adafruit Industries
+/*
+Copyright 2017 iBibb Team and Seeed Technology Inc
 
 Permission is hereby granted, free of charge, to any person obtaining a 
 copy of this software and associated documentation files (the "Software"), 
@@ -20,3 +18,21 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 DEALINGS IN THE SOFTWARE.
+ */
+void InitOledScreen()
+{
+  SeeedOled.init();
+  SeeedOled.clearDisplay();
+  SeeedOled.setNormalDisplay();      //Ne pas inverser les couleurs
+  //SeeedOled.setPageMode();           
+  SeeedOled.setTextXY(2,3);          //Définir le curseur sur 0,0 
+  SeeedOled.putString(iBibbVersion); //Afficher la chaine de caractères
+  SeeedOled.setTextXY(0,0);
+}
+
+void AfficherImage (char Image)
+{
+  SeeedOled.clearDisplay();  // Nettoyer l'écran 
+  SeeedOled.setNormalDisplay();          // Ne pas inverser les couleurs
+  SeeedOled.drawBitmap(Image,1024);   // 1024 = 128 Pixels * 64 Pixels / 8
+}

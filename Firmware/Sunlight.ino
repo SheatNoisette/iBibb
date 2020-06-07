@@ -1,7 +1,5 @@
-MIT License
-
-
-Copyright 2017 iBibb Team, Seeed Technology Inc and Adafruit Industries
+/*
+Copyright 2017 iBibb Team and SeeedStudio
 
 Permission is hereby granted, free of charge, to any person obtaining a 
 copy of this software and associated documentation files (the "Software"), 
@@ -20,3 +18,19 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 DEALINGS IN THE SOFTWARE.
+ */
+ 
+void ReleverLumiere ()
+{
+  LumiereVisible = SondeIR.ReadVisible();
+  ValeurIR = SondeIR.ReadIR();
+  ValeurUV = SondeIR.ReadUV()/100.0;
+
+  Serial.print("Lumiere visible: ");
+  Serial.println(LumiereVisible);
+  Serial.print("Lumiere Infrarouge: ");
+  Serial.println(ValeurIR);
+  Serial.print("UV:");
+  Serial.println(ValeurUV);
+}
+

@@ -1,7 +1,5 @@
-MIT License
-
-
-Copyright 2017 iBibb Team, Seeed Technology Inc and Adafruit Industries
+/*
+Copyright 2017 iBibb Team and SeeedStudio
 
 Permission is hereby granted, free of charge, to any person obtaining a 
 copy of this software and associated documentation files (the "Software"), 
@@ -20,3 +18,24 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 DEALINGS IN THE SOFTWARE.
+ */
+
+void LireTemps ()
+{
+  //Lire l'heure
+  HorlogeInterne.getTime(); // Relever l'heure de la mémoire interne du DS1307
+  Heure = HorlogeInterne.hour;
+  Minutes = HorlogeInterne.minute;
+  Secondes = HorlogeInterne.second;
+
+  //Envoyer ceci au moniteur série
+  Serial.print("D'apres la RTC, il est ");
+  Serial.print(Heure);
+  Serial.print(":");
+  Serial.print(Minutes);
+  Serial.print(".");
+  Serial.print(Secondes);
+  Serial.print("!");
+  Serial.println(); 
+}
+

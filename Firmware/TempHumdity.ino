@@ -1,7 +1,5 @@
-MIT License
-
-
-Copyright 2017 iBibb Team, Seeed Technology Inc and Adafruit Industries
+/*
+Copyright 2017 iBibb Team, Adafruit Industries and Seeed Technology Inc
 
 Permission is hereby granted, free of charge, to any person obtaining a 
 copy of this software and associated documentation files (the "Software"), 
@@ -20,3 +18,37 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 DEALINGS IN THE SOFTWARE.
+ */
+
+void LireSondeEtanche()
+{
+  if(LireTemperature(&temperatureSonde, true) != READ_OK) {
+    Serial.println(F("Le capteur n'est pas accessible"));
+    return;
+  }
+  Serial.print(F("Temperature de la sonde etanche : "));
+  Serial.print(temperatureSonde, 2);
+  Serial.write(176); // Caractère degré
+  Serial.write('C');
+  Serial.println();
+}
+
+//Capteur de température et d'humidité
+void LireTemperatureHumid()
+{
+  DHTTemperature = SondeTempHumid.readTemperature();
+  DHTHumidite = SondeTempHumid.readHumidity();
+  
+  if (isnan(DHTTemperature) || isnan(DHTHumidite)) {
+    Serial.println("Erreur lors de la lecture du capteur DHT11!");
+  } else {
+    Serial.print("Humidite DHT: ");
+    Serial.print(DHTHumidite);
+    Serial.print(" %\t");
+    Serial.print("Temperature DHT: ");
+    Serial.print(DHTTemperature);
+    Serial.println(" *C");
+  }
+  
+}
+

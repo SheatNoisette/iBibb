@@ -1,0 +1,95 @@
+{
+  "methods": [
+    {
+      "deprecated": "false",
+      "description": "Move task (i.e. the app) to the background.",
+      "name": "MoveTaskToBack",
+      "params": []
+    },
+    {
+      "deprecated": "false",
+      "description": "Send a notifacation in n seconds with the corresponding title and text.After restarting the app, you can get the start text from the 'plain start text' block in App Inventor.",
+      "name": "Send",
+      "params": [
+        {
+          "name": "seconds",
+          "type": "number"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "text",
+          "type": "text"
+        },
+        {
+          "name": "startText",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "nonVisible": "true",
+  "external": "true",
+  "helpString": "Simple Notification Extension. Version 3 as of 2017-01-16 for App Inventor version nb153 and Companion version 239.",
+  "events": [],
+  "name": "TaifunNotification",
+  "iconName": "https://puravidaapps.com/images/taifun16.png",
+  "blockProperties": [
+    {
+      "deprecated": "false",
+      "description": "whether big picture should be displayed in Notification (available starting from Android 4.1)",
+      "name": "DisplayBigPicture",
+      "type": "boolean",
+      "rw": "read-write"
+    },
+    {
+      "deprecated": "false",
+      "description": "custom notification icon",
+      "name": "Icon",
+      "type": "text",
+      "rw": "read-write"
+    },
+    {
+      "deprecated": "false",
+      "description": "whether click onto notification should be ignored",
+      "name": "IgnoreNotification",
+      "type": "boolean",
+      "rw": "read-write"
+    },
+    {
+      "deprecated": "false",
+      "description": "whether Notification Sound should be suppressed",
+      "name": "SuppressSound",
+      "type": "boolean",
+      "rw": "read-write"
+    }
+  ],
+  "categoryString": "EXTENSION",
+  "properties": [
+    {
+      "name": "DisplayBigPicture",
+      "defaultValue": "False",
+      "editorType": "boolean"
+    },
+    {
+      "name": "Icon",
+      "defaultValue": "",
+      "editorType": "asset"
+    },
+    {
+      "name": "IgnoreNotification",
+      "defaultValue": "False",
+      "editorType": "boolean"
+    },
+    {
+      "name": "SuppressSound",
+      "defaultValue": "False",
+      "editorType": "boolean"
+    }
+  ],
+  "type": "com.puravidaapps.TaifunNotification",
+  "showOnPalette": "true",
+  "version": "3"
+}

@@ -1,0 +1,1484 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="global_declaration" id="576" inline="false" x="-180" y="-155">
+    <field name="NAME">Selection</field>
+    <value name="VALUE">
+      <block type="math_number" id="651">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="1" inline="false" x="177" y="-147">
+    <field name="NAME">ListeMessage</field>
+    <value name="VALUE">
+      <block type="lists_create_with" id="2">
+        <mutation items="0"></mutation>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="3" inline="false" x="-189" y="-111">
+    <field name="NAME">LampeAlumee</field>
+    <value name="VALUE">
+      <block type="text" id="4">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="5" inline="false" x="178" y="-115">
+    <field name="NAME">MessageRecu</field>
+    <value name="VALUE">
+      <block type="text" id="6">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="7" inline="false" x="-195" y="-67">
+    <field name="NAME">PH</field>
+    <value name="VALUE">
+      <block type="math_number" id="8">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="9" inline="false" x="97" y="-76">
+    <field name="NAME">HumdiAmbiante</field>
+    <value name="VALUE">
+      <block type="math_number" id="10">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="11" inline="false" x="-198" y="-32">
+    <field name="NAME">TempSonde</field>
+    <value name="VALUE">
+      <block type="math_number" id="12">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="13" inline="false" x="99" y="-43">
+    <field name="NAME">EauNiv</field>
+    <value name="VALUE">
+      <block type="math_number" id="14">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="15" inline="false" x="99" y="-12">
+    <field name="NAME">TempAmbiante</field>
+    <value name="VALUE">
+      <block type="math_number" id="16">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="component_event" id="17" x="-532" y="23">
+    <mutation component_type="Button" is_generic="false" instance_name="QuitterBouton" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">QuitterBouton</field>
+    <statement name="DO">
+      <block type="component_method" id="18">
+        <mutation component_type="BluetoothClient" method_name="Disconnect" is_generic="false" instance_name="BluetoothClient1"></mutation>
+        <field name="COMPONENT_SELECTOR">BluetoothClient1</field>
+        <next>
+          <block type="controls_closeApplication" id="19"></block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="20" x="-200" y="15">
+    <mutation component_type="ListPicker" is_generic="false" instance_name="ListPicker1" event_name="BeforePicking"></mutation>
+    <field name="COMPONENT_SELECTOR">ListPicker1</field>
+    <statement name="DO">
+      <block type="controls_if" id="21" inline="false">
+        <value name="IF0">
+          <block type="component_set_get" id="22">
+            <mutation component_type="BluetoothClient" set_or_get="get" property_name="Available" is_generic="false" instance_name="BluetoothClient1"></mutation>
+            <field name="COMPONENT_SELECTOR">BluetoothClient1</field>
+            <field name="PROP">Available</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="component_set_get" id="23" inline="false">
+            <mutation component_type="ListPicker" set_or_get="set" property_name="Elements" is_generic="false" instance_name="ListPicker1"></mutation>
+            <field name="COMPONENT_SELECTOR">ListPicker1</field>
+            <field name="PROP">Elements</field>
+            <value name="VALUE">
+              <block type="component_set_get" id="24">
+                <mutation component_type="BluetoothClient" set_or_get="get" property_name="AddressesAndNames" is_generic="false" instance_name="BluetoothClient1"></mutation>
+                <field name="COMPONENT_SELECTOR">BluetoothClient1</field>
+                <field name="PROP">AddressesAndNames</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="875" x="-672" y="126">
+    <mutation component_type="Form" is_generic="false" instance_name="Screen1" event_name="Initialize"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen1</field>
+    <statement name="DO">
+      <block type="component_set_get" id="334" inline="false">
+        <mutation component_type="TaifunNotification" set_or_get="set" property_name="Icon" is_generic="false" instance_name="TaifunNotification1"></mutation>
+        <field name="COMPONENT_SELECTOR">TaifunNotification1</field>
+        <field name="PROP">Icon</field>
+        <value name="VALUE">
+          <block type="text" id="377">
+            <field name="TEXT">app_icon.png</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="28" x="-187" y="151">
+    <mutation component_type="ListPicker" is_generic="false" instance_name="ListPicker1" event_name="AfterPicking"></mutation>
+    <field name="COMPONENT_SELECTOR">ListPicker1</field>
+    <statement name="DO">
+      <block type="controls_if" id="29" inline="false">
+        <value name="IF0">
+          <block type="component_method" id="30" inline="false">
+            <mutation component_type="BluetoothClient" method_name="Connect" is_generic="false" instance_name="BluetoothClient1"></mutation>
+            <field name="COMPONENT_SELECTOR">BluetoothClient1</field>
+            <value name="ARG0">
+              <block type="component_set_get" id="31">
+                <mutation component_type="ListPicker" set_or_get="get" property_name="Selection" is_generic="false" instance_name="ListPicker1"></mutation>
+                <field name="COMPONENT_SELECTOR">ListPicker1</field>
+                <field name="PROP">Selection</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="component_set_get" id="32" inline="false">
+            <mutation component_type="ListPicker" set_or_get="set" property_name="Text" is_generic="false" instance_name="ListPicker1"></mutation>
+            <field name="COMPONENT_SELECTOR">ListPicker1</field>
+            <field name="PROP">Text</field>
+            <value name="VALUE">
+              <block type="text" id="33">
+                <field name="TEXT">Connecté</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="34" inline="false">
+                <mutation component_type="Clock" set_or_get="set" property_name="TimerEnabled" is_generic="false" instance_name="Clock1"></mutation>
+                <field name="COMPONENT_SELECTOR">Clock1</field>
+                <field name="PROP">TimerEnabled</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="35">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="402" x="-945" y="312">
+    <mutation component_type="CheckBox" is_generic="false" instance_name="CheckBox1" event_name="Changed"></mutation>
+    <field name="COMPONENT_SELECTOR">CheckBox1</field>
+    <statement name="DO">
+      <block type="controls_if" id="446" inline="false">
+        <value name="IF0">
+          <block type="component_set_get" id="427">
+            <mutation component_type="CheckBox" set_or_get="get" property_name="Enabled" is_generic="false" instance_name="CheckBox1"></mutation>
+            <field name="COMPONENT_SELECTOR">CheckBox1</field>
+            <field name="PROP">Enabled</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id="126" inline="false">
+            <value name="IF0">
+              <block type="logic_or" id="127">
+                <field name="OP">OR</field>
+                <value name="A">
+                  <block type="math_compare" id="128">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="lexical_variable_get" id="129">
+                        <field name="VAR">global PH</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="130">
+                        <field name="NUM">6</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_compare" id="131">
+                    <field name="OP">GT</field>
+                    <value name="A">
+                      <block type="lexical_variable_get" id="132">
+                        <field name="VAR">global PH</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="133">
+                        <field name="NUM">8</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="controls_if" id="894" inline="false">
+                <mutation elseif="2"></mutation>
+                <value name="IF0">
+                  <block type="math_compare" id="929">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="lexical_variable_get" id="900">
+                        <field name="VAR">global Selection</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="958">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="component_method" id="248" inline="false">
+                    <mutation component_type="TaifunNotification" method_name="Send" is_generic="false" instance_name="TaifunNotification1"></mutation>
+                    <field name="COMPONENT_SELECTOR">TaifunNotification1</field>
+                    <value name="ARG0">
+                      <block type="math_number" id="322">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="text" id="963">
+                        <field name="TEXT">Alerte</field>
+                      </block>
+                    </value>
+                    <value name="ARG2">
+                      <block type="text" id="278">
+                        <field name="TEXT">Niveau de ph anormal !</field>
+                      </block>
+                    </value>
+                    <value name="ARG3">
+                      <block type="text" id="293">
+                        <field name="TEXT">iBibb</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <value name="IF1">
+                  <block type="math_compare" id="975">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="lexical_variable_get" id="976">
+                        <field name="VAR">global Selection</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="977">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO1">
+                  <block type="component_method" id="964" inline="false">
+                    <mutation component_type="Notifier" method_name="ShowChooseDialog" is_generic="false" instance_name="NotificationProb"></mutation>
+                    <field name="COMPONENT_SELECTOR">NotificationProb</field>
+                    <value name="ARG0">
+                      <block type="text" id="965">
+                        <field name="TEXT">Niveau de ph anormal !</field>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="text" id="966">
+                        <field name="TEXT">Alerte</field>
+                      </block>
+                    </value>
+                    <value name="ARG2">
+                      <block type="text" id="967">
+                        <field name="TEXT">Ok</field>
+                      </block>
+                    </value>
+                    <value name="ARG3">
+                      <block type="text" id="968">
+                        <field name="TEXT">Annuler</field>
+                      </block>
+                    </value>
+                    <value name="ARG4">
+                      <block type="logic_boolean" id="969">
+                        <field name="BOOL">TRUE</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <value name="IF2">
+                  <block type="math_compare" id="989">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="lexical_variable_get" id="990">
+                        <field name="VAR">global Selection</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="991">
+                        <field name="NUM">2</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO2">
+                  <block type="component_method" id="984" inline="false">
+                    <mutation component_type="TaifunNotification" method_name="Send" is_generic="false" instance_name="TaifunNotification1"></mutation>
+                    <field name="COMPONENT_SELECTOR">TaifunNotification1</field>
+                    <value name="ARG0">
+                      <block type="math_number" id="985">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="text" id="986">
+                        <field name="TEXT">Alerte</field>
+                      </block>
+                    </value>
+                    <value name="ARG2">
+                      <block type="text" id="987">
+                        <field name="TEXT">Niveau de ph anormal !</field>
+                      </block>
+                    </value>
+                    <value name="ARG3">
+                      <block type="text" id="988">
+                        <field name="TEXT">iBibb</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="component_method" id="978" inline="false">
+                        <mutation component_type="Notifier" method_name="ShowChooseDialog" is_generic="false" instance_name="NotificationProb"></mutation>
+                        <field name="COMPONENT_SELECTOR">NotificationProb</field>
+                        <value name="ARG0">
+                          <block type="text" id="979">
+                            <field name="TEXT">Niveau de ph anormal !</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="text" id="980">
+                            <field name="TEXT">Alerte</field>
+                          </block>
+                        </value>
+                        <value name="ARG2">
+                          <block type="text" id="981">
+                            <field name="TEXT">Ok</field>
+                          </block>
+                        </value>
+                        <value name="ARG3">
+                          <block type="text" id="982">
+                            <field name="TEXT">Annuler</field>
+                          </block>
+                        </value>
+                        <value name="ARG4">
+                          <block type="logic_boolean" id="983">
+                            <field name="BOOL">TRUE</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="145" inline="false">
+                <value name="IF0">
+                  <block type="math_compare" id="147">
+                    <field name="OP">LTE</field>
+                    <value name="A">
+                      <block type="lexical_variable_get" id="148">
+                        <field name="VAR">global EauNiv</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="149">
+                        <field name="NUM">25</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="controls_if" id="992" inline="false">
+                    <mutation elseif="2"></mutation>
+                    <value name="IF0">
+                      <block type="math_compare" id="993">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="lexical_variable_get" id="994">
+                            <field name="VAR">global Selection</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="995">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="component_method" id="996" inline="false">
+                        <mutation component_type="TaifunNotification" method_name="Send" is_generic="false" instance_name="TaifunNotification1"></mutation>
+                        <field name="COMPONENT_SELECTOR">TaifunNotification1</field>
+                        <value name="ARG0">
+                          <block type="math_number" id="997">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="text" id="998">
+                            <field name="TEXT">Alerte</field>
+                          </block>
+                        </value>
+                        <value name="ARG2">
+                          <block type="text" id="999">
+                            <field name="TEXT">Niveau d'eau anormal!</field>
+                          </block>
+                        </value>
+                        <value name="ARG3">
+                          <block type="text" id="1000">
+                            <field name="TEXT">iBibb</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="math_compare" id="1001">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="lexical_variable_get" id="1002">
+                            <field name="VAR">global Selection</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="1003">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="component_method" id="1004" inline="false">
+                        <mutation component_type="Notifier" method_name="ShowChooseDialog" is_generic="false" instance_name="NotificationProb"></mutation>
+                        <field name="COMPONENT_SELECTOR">NotificationProb</field>
+                        <value name="ARG0">
+                          <block type="text" id="1056">
+                            <field name="TEXT">Niveau d'eau anormal!</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="text" id="1006">
+                            <field name="TEXT">Alerte</field>
+                          </block>
+                        </value>
+                        <value name="ARG2">
+                          <block type="text" id="1007">
+                            <field name="TEXT">Ok</field>
+                          </block>
+                        </value>
+                        <value name="ARG3">
+                          <block type="text" id="1008">
+                            <field name="TEXT">Annuler</field>
+                          </block>
+                        </value>
+                        <value name="ARG4">
+                          <block type="logic_boolean" id="1009">
+                            <field name="BOOL">TRUE</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="IF2">
+                      <block type="math_compare" id="1010">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="lexical_variable_get" id="1011">
+                            <field name="VAR">global Selection</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="1012">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO2">
+                      <block type="component_method" id="1013" inline="false">
+                        <mutation component_type="TaifunNotification" method_name="Send" is_generic="false" instance_name="TaifunNotification1"></mutation>
+                        <field name="COMPONENT_SELECTOR">TaifunNotification1</field>
+                        <value name="ARG0">
+                          <block type="math_number" id="1014">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="text" id="1015">
+                            <field name="TEXT">Alerte</field>
+                          </block>
+                        </value>
+                        <value name="ARG2">
+                          <block type="text" id="1016">
+                            <field name="TEXT">Niveau d'eau anormal!</field>
+                          </block>
+                        </value>
+                        <value name="ARG3">
+                          <block type="text" id="1017">
+                            <field name="TEXT">iBibb</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="component_method" id="1018" inline="false">
+                            <mutation component_type="Notifier" method_name="ShowChooseDialog" is_generic="false" instance_name="NotificationProb"></mutation>
+                            <field name="COMPONENT_SELECTOR">NotificationProb</field>
+                            <value name="ARG0">
+                              <block type="text" id="1019">
+                                <field name="TEXT">Niveau d'eau anormal!</field>
+                              </block>
+                            </value>
+                            <value name="ARG1">
+                              <block type="text" id="1020">
+                                <field name="TEXT">Alerte</field>
+                              </block>
+                            </value>
+                            <value name="ARG2">
+                              <block type="text" id="1021">
+                                <field name="TEXT">Ok</field>
+                              </block>
+                            </value>
+                            <value name="ARG3">
+                              <block type="text" id="1022">
+                                <field name="TEXT">Annuler</field>
+                              </block>
+                            </value>
+                            <value name="ARG4">
+                              <block type="logic_boolean" id="1023">
+                                <field name="BOOL">TRUE</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="186" inline="false">
+                    <value name="IF0">
+                      <block type="logic_or" id="187">
+                        <field name="OP">OR</field>
+                        <value name="A">
+                          <block type="math_compare" id="188">
+                            <field name="OP">LT</field>
+                            <value name="A">
+                              <block type="lexical_variable_get" id="189">
+                                <field name="VAR">global TempSonde</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="190">
+                                <field name="NUM">18</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_compare" id="191">
+                            <field name="OP">GT</field>
+                            <value name="A">
+                              <block type="lexical_variable_get" id="192">
+                                <field name="VAR">global TempSonde</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="193">
+                                <field name="NUM">25</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="controls_if" id="227" inline="false">
+                        <mutation else="1"></mutation>
+                        <value name="IF0">
+                          <block type="math_compare" id="206">
+                            <field name="OP">LT</field>
+                            <value name="A">
+                              <block type="lexical_variable_get" id="207">
+                                <field name="VAR">global TempSonde</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="208">
+                                <field name="NUM">18</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="controls_if" id="1024" inline="false">
+                            <mutation elseif="2"></mutation>
+                            <value name="IF0">
+                              <block type="math_compare" id="1025">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="lexical_variable_get" id="1026">
+                                    <field name="VAR">global Selection</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="1027">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="component_method" id="1028" inline="false">
+                                <mutation component_type="TaifunNotification" method_name="Send" is_generic="false" instance_name="TaifunNotification1"></mutation>
+                                <field name="COMPONENT_SELECTOR">TaifunNotification1</field>
+                                <value name="ARG0">
+                                  <block type="math_number" id="1029">
+                                    <field name="NUM">10</field>
+                                  </block>
+                                </value>
+                                <value name="ARG1">
+                                  <block type="text" id="1030">
+                                    <field name="TEXT">Alerte</field>
+                                  </block>
+                                </value>
+                                <value name="ARG2">
+                                  <block type="text" id="1031">
+                                    <field name="TEXT">L'eau du système est trop froide !</field>
+                                  </block>
+                                </value>
+                                <value name="ARG3">
+                                  <block type="text" id="1032">
+                                    <field name="TEXT">iBibb</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <value name="IF1">
+                              <block type="math_compare" id="1033">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="lexical_variable_get" id="1034">
+                                    <field name="VAR">global Selection</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="1035">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO1">
+                              <block type="component_method" id="1036" inline="false">
+                                <mutation component_type="Notifier" method_name="ShowChooseDialog" is_generic="false" instance_name="NotificationProb"></mutation>
+                                <field name="COMPONENT_SELECTOR">NotificationProb</field>
+                                <value name="ARG0">
+                                  <block type="text" id="1037">
+                                    <field name="TEXT">L'eau du système est trop froide !</field>
+                                  </block>
+                                </value>
+                                <value name="ARG1">
+                                  <block type="text" id="1038">
+                                    <field name="TEXT">Alerte</field>
+                                  </block>
+                                </value>
+                                <value name="ARG2">
+                                  <block type="text" id="1039">
+                                    <field name="TEXT">Ok</field>
+                                  </block>
+                                </value>
+                                <value name="ARG3">
+                                  <block type="text" id="1040">
+                                    <field name="TEXT">Annuler</field>
+                                  </block>
+                                </value>
+                                <value name="ARG4">
+                                  <block type="logic_boolean" id="1041">
+                                    <field name="BOOL">TRUE</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <value name="IF2">
+                              <block type="math_compare" id="1042">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="lexical_variable_get" id="1043">
+                                    <field name="VAR">global Selection</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="1044">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO2">
+                              <block type="component_method" id="1045" inline="false">
+                                <mutation component_type="TaifunNotification" method_name="Send" is_generic="false" instance_name="TaifunNotification1"></mutation>
+                                <field name="COMPONENT_SELECTOR">TaifunNotification1</field>
+                                <value name="ARG0">
+                                  <block type="math_number" id="1046">
+                                    <field name="NUM">10</field>
+                                  </block>
+                                </value>
+                                <value name="ARG1">
+                                  <block type="text" id="1047">
+                                    <field name="TEXT">Alerte</field>
+                                  </block>
+                                </value>
+                                <value name="ARG2">
+                                  <block type="text" id="1048">
+                                    <field name="TEXT">L'eau du système est trop froide !</field>
+                                  </block>
+                                </value>
+                                <value name="ARG3">
+                                  <block type="text" id="1049">
+                                    <field name="TEXT">iBibb</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="component_method" id="1050" inline="false">
+                                    <mutation component_type="Notifier" method_name="ShowChooseDialog" is_generic="false" instance_name="NotificationProb"></mutation>
+                                    <field name="COMPONENT_SELECTOR">NotificationProb</field>
+                                    <value name="ARG0">
+                                      <block type="text" id="1051">
+                                        <field name="TEXT">L'eau du système est trop froide !</field>
+                                      </block>
+                                    </value>
+                                    <value name="ARG1">
+                                      <block type="text" id="1052">
+                                        <field name="TEXT">Alerte</field>
+                                      </block>
+                                    </value>
+                                    <value name="ARG2">
+                                      <block type="text" id="1053">
+                                        <field name="TEXT">Ok</field>
+                                      </block>
+                                    </value>
+                                    <value name="ARG3">
+                                      <block type="text" id="1054">
+                                        <field name="TEXT">Annuler</field>
+                                      </block>
+                                    </value>
+                                    <value name="ARG4">
+                                      <block type="logic_boolean" id="1055">
+                                        <field name="BOOL">TRUE</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="controls_if" id="1057" inline="false">
+                            <mutation elseif="2"></mutation>
+                            <value name="IF0">
+                              <block type="math_compare" id="1058">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="lexical_variable_get" id="1059">
+                                    <field name="VAR">global Selection</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="1060">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="component_method" id="1061" inline="false">
+                                <mutation component_type="TaifunNotification" method_name="Send" is_generic="false" instance_name="TaifunNotification1"></mutation>
+                                <field name="COMPONENT_SELECTOR">TaifunNotification1</field>
+                                <value name="ARG0">
+                                  <block type="math_number" id="1062">
+                                    <field name="NUM">10</field>
+                                  </block>
+                                </value>
+                                <value name="ARG1">
+                                  <block type="text" id="1063">
+                                    <field name="TEXT">Alerte</field>
+                                  </block>
+                                </value>
+                                <value name="ARG2">
+                                  <block type="text" id="1064">
+                                    <field name="TEXT">L'eau du système est trop chaude !</field>
+                                  </block>
+                                </value>
+                                <value name="ARG3">
+                                  <block type="text" id="1065">
+                                    <field name="TEXT">iBibb</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <value name="IF1">
+                              <block type="math_compare" id="1066">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="lexical_variable_get" id="1067">
+                                    <field name="VAR">global Selection</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="1068">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO1">
+                              <block type="component_method" id="1069" inline="false">
+                                <mutation component_type="Notifier" method_name="ShowChooseDialog" is_generic="false" instance_name="NotificationProb"></mutation>
+                                <field name="COMPONENT_SELECTOR">NotificationProb</field>
+                                <value name="ARG0">
+                                  <block type="text" id="1070">
+                                    <field name="TEXT">L'eau du système est trop chaude !</field>
+                                  </block>
+                                </value>
+                                <value name="ARG1">
+                                  <block type="text" id="1071">
+                                    <field name="TEXT">Alerte</field>
+                                  </block>
+                                </value>
+                                <value name="ARG2">
+                                  <block type="text" id="1072">
+                                    <field name="TEXT">Ok</field>
+                                  </block>
+                                </value>
+                                <value name="ARG3">
+                                  <block type="text" id="1073">
+                                    <field name="TEXT">Annuler</field>
+                                  </block>
+                                </value>
+                                <value name="ARG4">
+                                  <block type="logic_boolean" id="1074">
+                                    <field name="BOOL">TRUE</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <value name="IF2">
+                              <block type="math_compare" id="1075">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="lexical_variable_get" id="1076">
+                                    <field name="VAR">global Selection</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="1077">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO2">
+                              <block type="component_method" id="1078" inline="false">
+                                <mutation component_type="TaifunNotification" method_name="Send" is_generic="false" instance_name="TaifunNotification1"></mutation>
+                                <field name="COMPONENT_SELECTOR">TaifunNotification1</field>
+                                <value name="ARG0">
+                                  <block type="math_number" id="1079">
+                                    <field name="NUM">10</field>
+                                  </block>
+                                </value>
+                                <value name="ARG1">
+                                  <block type="text" id="1080">
+                                    <field name="TEXT">Alerte</field>
+                                  </block>
+                                </value>
+                                <value name="ARG2">
+                                  <block type="text" id="1081">
+                                    <field name="TEXT">L'eau du système est trop froide !</field>
+                                  </block>
+                                </value>
+                                <value name="ARG3">
+                                  <block type="text" id="1082">
+                                    <field name="TEXT">iBibb</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="component_method" id="1083" inline="false">
+                                    <mutation component_type="Notifier" method_name="ShowChooseDialog" is_generic="false" instance_name="NotificationProb"></mutation>
+                                    <field name="COMPONENT_SELECTOR">NotificationProb</field>
+                                    <value name="ARG0">
+                                      <block type="text" id="1084">
+                                        <field name="TEXT">L'eau du système est trop chaude !</field>
+                                      </block>
+                                    </value>
+                                    <value name="ARG1">
+                                      <block type="text" id="1085">
+                                        <field name="TEXT">Alerte</field>
+                                      </block>
+                                    </value>
+                                    <value name="ARG2">
+                                      <block type="text" id="1086">
+                                        <field name="TEXT">Ok</field>
+                                      </block>
+                                    </value>
+                                    <value name="ARG3">
+                                      <block type="text" id="1087">
+                                        <field name="TEXT">Annuler</field>
+                                      </block>
+                                    </value>
+                                    <value name="ARG4">
+                                      <block type="logic_boolean" id="1088">
+                                        <field name="BOOL">TRUE</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="36" x="-167" y="350">
+    <mutation component_type="Clock" is_generic="false" instance_name="Clock1" event_name="Timer"></mutation>
+    <field name="COMPONENT_SELECTOR">Clock1</field>
+    <statement name="DO">
+      <block type="controls_if" id="37" inline="false">
+        <value name="IF0">
+          <block type="math_compare" id="38">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="component_method" id="39">
+                <mutation component_type="BluetoothClient" method_name="BytesAvailableToReceive" is_generic="false" instance_name="BluetoothClient1"></mutation>
+                <field name="COMPONENT_SELECTOR">BluetoothClient1</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="40">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="lexical_variable_set" id="41" inline="false">
+            <field name="VAR">global MessageRecu</field>
+            <value name="VALUE">
+              <block type="component_method" id="42" inline="false">
+                <mutation component_type="BluetoothClient" method_name="ReceiveText" is_generic="false" instance_name="BluetoothClient1"></mutation>
+                <field name="COMPONENT_SELECTOR">BluetoothClient1</field>
+                <value name="ARG0">
+                  <block type="component_method" id="43">
+                    <mutation component_type="BluetoothClient" method_name="BytesAvailableToReceive" is_generic="false" instance_name="BluetoothClient1"></mutation>
+                    <field name="COMPONENT_SELECTOR">BluetoothClient1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="44" inline="false">
+                <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="BluetoothString"></mutation>
+                <field name="COMPONENT_SELECTOR">BluetoothString</field>
+                <field name="PROP">Text</field>
+                <value name="VALUE">
+                  <block type="lexical_variable_get" id="45">
+                    <field name="VAR">global MessageRecu</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="lexical_variable_set" id="46" inline="false">
+                    <field name="VAR">global ListeMessage</field>
+                    <value name="VALUE">
+                      <block type="lists_create_with" id="47" inline="false">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                          <block type="lexical_variable_get" id="48">
+                            <field name="VAR">global MessageRecu</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="lexical_variable_set" id="49" inline="false">
+                        <field name="VAR">global PH</field>
+                        <value name="VALUE">
+                          <block type="text_segment" id="50">
+                            <value name="TEXT">
+                              <block type="text_split" id="51" inline="false">
+                                <mutation mode="SPLIT"></mutation>
+                                <field name="OP">SPLIT</field>
+                                <value name="TEXT">
+                                  <block type="lexical_variable_get" id="52">
+                                    <field name="VAR">global MessageRecu</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="text" id="53">
+                                    <field name="TEXT">,</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="START">
+                              <block type="math_number" id="54">
+                                <field name="NUM">15</field>
+                              </block>
+                            </value>
+                            <value name="LENGTH">
+                              <block type="math_number" id="55">
+                                <field name="NUM">3</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="lexical_variable_set" id="56" inline="false">
+                            <field name="VAR">global PH</field>
+                            <value name="VALUE">
+                              <block type="math_division" id="57">
+                                <value name="A">
+                                  <block type="lexical_variable_get" id="58">
+                                    <field name="VAR">global PH</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="59">
+                                    <field name="NUM">100</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="component_set_get" id="60" inline="false">
+                                <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="Ph"></mutation>
+                                <field name="COMPONENT_SELECTOR">Ph</field>
+                                <field name="PROP">Text</field>
+                                <value name="VALUE">
+                                  <block type="lexical_variable_get" id="61">
+                                    <field name="VAR">global PH</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="lexical_variable_set" id="62" inline="false">
+                                    <field name="VAR">global TempSonde</field>
+                                    <value name="VALUE">
+                                      <block type="text_segment" id="63">
+                                        <value name="TEXT">
+                                          <block type="text_split" id="64" inline="false">
+                                            <mutation mode="SPLIT"></mutation>
+                                            <field name="OP">SPLIT</field>
+                                            <value name="TEXT">
+                                              <block type="lexical_variable_get" id="65">
+                                                <field name="VAR">global MessageRecu</field>
+                                              </block>
+                                            </value>
+                                            <value name="AT">
+                                              <block type="text" id="66">
+                                                <field name="TEXT">,</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="START">
+                                          <block type="math_number" id="67">
+                                            <field name="NUM">4</field>
+                                          </block>
+                                        </value>
+                                        <value name="LENGTH">
+                                          <block type="math_number" id="68">
+                                            <field name="NUM">4</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="lexical_variable_set" id="69" inline="false">
+                                        <field name="VAR">global TempSonde</field>
+                                        <value name="VALUE">
+                                          <block type="math_division" id="70">
+                                            <value name="A">
+                                              <block type="lexical_variable_get" id="71">
+                                                <field name="VAR">global TempSonde</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="72">
+                                                <field name="NUM">100</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="component_set_get" id="73" inline="false">
+                                            <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="TempEtanche"></mutation>
+                                            <field name="COMPONENT_SELECTOR">TempEtanche</field>
+                                            <field name="PROP">Text</field>
+                                            <value name="VALUE">
+                                              <block type="lexical_variable_get" id="74">
+                                                <field name="VAR">global TempSonde</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="lexical_variable_set" id="75" inline="false">
+                                                <field name="VAR">global TempAmbiante</field>
+                                                <value name="VALUE">
+                                                  <block type="text_segment" id="76">
+                                                    <value name="TEXT">
+                                                      <block type="text_split" id="77" inline="false">
+                                                        <mutation mode="SPLIT"></mutation>
+                                                        <field name="OP">SPLIT</field>
+                                                        <value name="TEXT">
+                                                          <block type="lexical_variable_get" id="78">
+                                                            <field name="VAR">global MessageRecu</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="AT">
+                                                          <block type="text" id="79">
+                                                            <field name="TEXT">,</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="START">
+                                                      <block type="math_number" id="80">
+                                                        <field name="NUM">9</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="LENGTH">
+                                                      <block type="math_number" id="81">
+                                                        <field name="NUM">2</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="component_set_get" id="82" inline="false">
+                                                    <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="TempAmbiante"></mutation>
+                                                    <field name="COMPONENT_SELECTOR">TempAmbiante</field>
+                                                    <field name="PROP">Text</field>
+                                                    <value name="VALUE">
+                                                      <block type="lexical_variable_get" id="83">
+                                                        <field name="VAR">global TempAmbiante</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="lexical_variable_set" id="84" inline="false">
+                                                        <field name="VAR">global HumdiAmbiante</field>
+                                                        <value name="VALUE">
+                                                          <block type="text_segment" id="85">
+                                                            <value name="TEXT">
+                                                              <block type="text_split" id="86" inline="false">
+                                                                <mutation mode="SPLIT"></mutation>
+                                                                <field name="OP">SPLIT</field>
+                                                                <value name="TEXT">
+                                                                  <block type="lexical_variable_get" id="87">
+                                                                    <field name="VAR">global MessageRecu</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="AT">
+                                                                  <block type="text" id="88">
+                                                                    <field name="TEXT">,</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <value name="START">
+                                                              <block type="math_number" id="89">
+                                                                <field name="NUM">12</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="LENGTH">
+                                                              <block type="math_number" id="90">
+                                                                <field name="NUM">2</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="component_set_get" id="91" inline="false">
+                                                            <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="Humid"></mutation>
+                                                            <field name="COMPONENT_SELECTOR">Humid</field>
+                                                            <field name="PROP">Text</field>
+                                                            <value name="VALUE">
+                                                              <block type="lexical_variable_get" id="92">
+                                                                <field name="VAR">global HumdiAmbiante</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="lexical_variable_set" id="93" inline="false">
+                                                                <field name="VAR">global EauNiv</field>
+                                                                <value name="VALUE">
+                                                                  <block type="text_segment" id="94">
+                                                                    <value name="TEXT">
+                                                                      <block type="text_split" id="95" inline="false">
+                                                                        <mutation mode="SPLIT"></mutation>
+                                                                        <field name="OP">SPLIT</field>
+                                                                        <value name="TEXT">
+                                                                          <block type="lexical_variable_get" id="96">
+                                                                            <field name="VAR">global MessageRecu</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="AT">
+                                                                          <block type="text" id="97">
+                                                                            <field name="TEXT">,</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="START">
+                                                                      <block type="math_number" id="98">
+                                                                        <field name="NUM">19</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="LENGTH">
+                                                                      <block type="math_number" id="99">
+                                                                        <field name="NUM">2</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="component_set_get" id="100" inline="false">
+                                                                    <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="NivEau"></mutation>
+                                                                    <field name="COMPONENT_SELECTOR">NivEau</field>
+                                                                    <field name="PROP">Text</field>
+                                                                    <value name="VALUE">
+                                                                      <block type="lexical_variable_get" id="101">
+                                                                        <field name="VAR">global EauNiv</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="lexical_variable_set" id="102" inline="false">
+                                                                        <field name="VAR">global LampeAlumee</field>
+                                                                        <value name="VALUE">
+                                                                          <block type="text_segment" id="103">
+                                                                            <value name="TEXT">
+                                                                              <block type="text_split" id="104" inline="false">
+                                                                                <mutation mode="SPLIT"></mutation>
+                                                                                <field name="OP">SPLIT</field>
+                                                                                <value name="TEXT">
+                                                                                  <block type="lexical_variable_get" id="105">
+                                                                                    <field name="VAR">global MessageRecu</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="AT">
+                                                                                  <block type="text" id="106">
+                                                                                    <field name="TEXT">,</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="START">
+                                                                              <block type="math_number" id="107">
+                                                                                <field name="NUM">2</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="LENGTH">
+                                                                              <block type="math_number" id="108">
+                                                                                <field name="NUM">2</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="controls_if" id="109" inline="false">
+                                                                            <mutation else="1"></mutation>
+                                                                            <value name="IF0">
+                                                                              <block type="logic_compare" id="110">
+                                                                                <field name="OP">EQ</field>
+                                                                                <value name="A">
+                                                                                  <block type="lexical_variable_get" id="111">
+                                                                                    <field name="VAR">global LampeAlumee</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="math_number" id="112">
+                                                                                    <field name="NUM">0</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <statement name="DO0">
+                                                                              <block type="component_set_get" id="113" inline="false">
+                                                                                <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="LumiereOnOff"></mutation>
+                                                                                <field name="COMPONENT_SELECTOR">LumiereOnOff</field>
+                                                                                <field name="PROP">Text</field>
+                                                                                <value name="VALUE">
+                                                                                  <block type="text" id="114">
+                                                                                    <field name="TEXT">Off</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </statement>
+                                                                            <statement name="ELSE">
+                                                                              <block type="component_set_get" id="115" inline="false">
+                                                                                <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="LumiereOnOff"></mutation>
+                                                                                <field name="COMPONENT_SELECTOR">LumiereOnOff</field>
+                                                                                <field name="PROP">Text</field>
+                                                                                <value name="VALUE">
+                                                                                  <block type="text" id="116">
+                                                                                    <field name="TEXT">On</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </statement>
+                                                                            <next>
+                                                                              <block type="controls_if" id="670" inline="false">
+                                                                                <mutation elseif="2"></mutation>
+                                                                                <value name="IF0">
+                                                                                  <block type="math_compare" id="713">
+                                                                                    <field name="OP">EQ</field>
+                                                                                    <value name="A">
+                                                                                      <block type="component_set_get" id="714">
+                                                                                        <mutation component_type="Spinner" set_or_get="get" property_name="Selection" is_generic="false" instance_name="TypeNotifi"></mutation>
+                                                                                        <field name="COMPONENT_SELECTOR">TypeNotifi</field>
+                                                                                        <field name="PROP">Selection</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="text" id="729">
+                                                                                        <field name="TEXT">Alerte</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <statement name="DO0">
+                                                                                  <block type="lexical_variable_set" id="755" inline="false">
+                                                                                    <field name="VAR">global Selection</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="math_number" id="831">
+                                                                                        <field name="NUM">0</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </statement>
+                                                                                <value name="IF1">
+                                                                                  <block type="math_compare" id="744">
+                                                                                    <field name="OP">EQ</field>
+                                                                                    <value name="A">
+                                                                                      <block type="component_set_get" id="745">
+                                                                                        <mutation component_type="Spinner" set_or_get="get" property_name="Selection" is_generic="false" instance_name="TypeNotifi"></mutation>
+                                                                                        <field name="COMPONENT_SELECTOR">TypeNotifi</field>
+                                                                                        <field name="PROP">Selection</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="text" id="746">
+                                                                                        <field name="TEXT">Notification</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <statement name="DO1">
+                                                                                  <block type="lexical_variable_set" id="832" inline="false">
+                                                                                    <field name="VAR">global Selection</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="math_number" id="833">
+                                                                                        <field name="NUM">1</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </statement>
+                                                                                <value name="IF2">
+                                                                                  <block type="math_compare" id="747">
+                                                                                    <field name="OP">EQ</field>
+                                                                                    <value name="A">
+                                                                                      <block type="component_set_get" id="748">
+                                                                                        <mutation component_type="Spinner" set_or_get="get" property_name="Selection" is_generic="false" instance_name="TypeNotifi"></mutation>
+                                                                                        <field name="COMPONENT_SELECTOR">TypeNotifi</field>
+                                                                                        <field name="PROP">Selection</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="text" id="749">
+                                                                                        <field name="TEXT">Alerte et Notification</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <statement name="DO2">
+                                                                                  <block type="lexical_variable_set" id="834" inline="false">
+                                                                                    <field name="VAR">global Selection</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="math_number" id="835">
+                                                                                        <field name="NUM">2</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </statement>
+                                                                                <next>
+                                                                                  <block type="component_set_get" id="119" inline="false">
+                                                                                    <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="Output"></mutation>
+                                                                                    <field name="COMPONENT_SELECTOR">Output</field>
+                                                                                    <field name="PROP">Text</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="lexical_variable_get" id="841">
+                                                                                        <field name="VAR">global Selection</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="206" language-version="31"></yacodeblocks>
+</xml>
